@@ -10,12 +10,10 @@
  */
 angular
   .module('firebaseApp', [
-    'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+    'ngSanitize'
   ])
   .config(function ($routeProvider) {
     $routeProvider
