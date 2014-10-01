@@ -9,14 +9,16 @@
  * Controller of the firebaseApp
  */
 angular.module('firebaseApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, $timeout) {
     var rootRef = new Firebase('https://shining-torch-2720.firebaseio.com/');
     var childRef = rootRef.child('message');
 
     childRef.on('value', function(snapshot) {
-      var snapshotVal =  snapshot.val();
-      console.log(snapshotVal);
-      $scope.message = snapshot.val();
+      $timeout(function() {
+        var snapshotVal =  snapshot.val();
+        console.log(snapshotVal);
+        $scope.message = snapshot.val();
+      });
     });
 
     $scope.$watch('message.text', function(newVal) {
