@@ -19,6 +19,7 @@ angular.module('firebaseApp')
         console.log(snapshot.numChildren());
         snapshot.forEach(function(item) {
           console.log(item.name() + ' - ' +  item.val());
+          console.log(item.ref());
         });
         var snapshotVal =  snapshot.val();
         console.log(snapshotVal);
