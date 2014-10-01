@@ -1,3 +1,4 @@
+/* Global Firebase */
 'use strict';
 
 /**
@@ -9,5 +10,12 @@
  */
 angular.module('firebaseApp')
   .controller('MainCtrl', function ($scope) {
-    var rootRef = new Firebase('https://shining-torch-2720.firebaseio.com/')
+    var rootRef = new Firebase('https://shining-torch-2720.firebaseio.com/');
+
+    $scope.setMessage = function() {
+      rootRef.child('message').set({
+        user: 'Bob',
+        text: 'Hi'
+      });
+    }
   });
