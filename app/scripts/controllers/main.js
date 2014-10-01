@@ -16,6 +16,7 @@ angular.module('firebaseApp')
     childRef.on('value', function(snapshot) {
       $timeout(function() {
         console.log(snapshot.hasChild('text'));
+        console.log(snapshot.numChildren());
         var snapshotVal =  snapshot.val();
         console.log(snapshotVal);
         $scope.message = snapshot.val();
