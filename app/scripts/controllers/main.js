@@ -15,6 +15,7 @@ angular.module('firebaseApp')
 
     childRef.on('value', function(snapshot) {
       $timeout(function() {
+        console.log(snapshot.hasChild('text'));
         var snapshotVal =  snapshot.val();
         console.log(snapshotVal);
         $scope.message = snapshot.val();
@@ -27,7 +28,7 @@ angular.module('firebaseApp')
       }
       childRef.update({
         text: newVal
-      })
+      });
     });
 
     // https://shining-torch-2720.firebaseio.com/message
