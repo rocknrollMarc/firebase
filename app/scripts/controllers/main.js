@@ -22,7 +22,12 @@ angular.module('firebaseApp')
     });
 
     $scope.$watch('message.text', function(newVal) {
-      console.log(newVal);
+      if (!newVal) {
+        return;
+      }
+      childRef.update({
+        text: newVal
+      })
     });
 
     // https://shining-torch-2720.firebaseio.com/message
