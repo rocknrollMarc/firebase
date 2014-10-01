@@ -9,9 +9,5 @@
  */
 angular.module('firebaseApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    var rootRef = new Firebase('https://shining-torch-2720.firebaseio.com/')
   });
