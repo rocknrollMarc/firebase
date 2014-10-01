@@ -22,8 +22,12 @@ angular.module('firebaseApp')
     }
 
     $scope.updateMessage = function() {
-      childRef.update({
-        text: 'Bye'
+      childRef.set({
+        lastname: 'Smith'
       });
-    }
+    };
+
+    $scope.deleteMessage = function() {
+      childRef.remove();
+    };
   });
